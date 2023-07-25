@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/demoS11/calc-service/pkg/calculator";
+
+service Calculator {
+    rpc Calculate(CalculateRequest) returns (CalculateReply){}
+}
+
+message CalculateRequest { 
+    int32 number1 = 1;
+    int32 number2 = 2;
+    string operator = 3;
+}
+
+message CalculateReply {
+    int32 result = 1;
+}
+
+
