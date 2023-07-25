@@ -1,6 +1,6 @@
 # Go binary names for the server and client
-SERVER_BINARY := calculator_server.out
-CLIENT_BINARY := calculator_client.out
+SERVER_BINARY := server.out
+CLIENT_BINARY := client.out
 
 .PHONY: build test run-server run-client clean
 

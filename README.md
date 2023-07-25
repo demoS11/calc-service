@@ -1,13 +1,15 @@
-# calc-service
+# calculator-service
 
-This project implements a gRPC server and client for performing simple math calculations. The server supports addition, subtraction, multiplication, and division operations.
+This project implements a gRPC server and client with Go for performing simple math calculations. The server supports addition, subtraction, multiplication, and division operations for now.
+
+This project utilizes Protocol Buffers (proto3) for defining the message formats and gRPC services.
 
 ## Table of Contents
 
 - Introduction
 - Installation
 - Usage
-- Testing
+- Unit Tests
 
 ## Requirements
 
@@ -21,14 +23,14 @@ This project implements a gRPC server and client for performing simple math calc
 
    ```go
    git clone https://github.com/demoS11/calc-service.git
-   cd calculator-grpc
+   cd calc-service
    ```
 
 2. **Install Go**
 
    For installation see installation guide of go: [https://go.dev/doc/install](https://go.dev/doc/install)
 
-3. **Install** \***\*Protocol Buffer Compiler\*\***
+3. **Install Protocol Buffer Compiler**
 
    For installation see installation guide of protoc3: [https://grpc.io/docs/protoc-installation/](https://grpc.io/docs/protoc-installation/)
 
@@ -36,7 +38,7 @@ This project implements a gRPC server and client for performing simple math calc
 
    For installation see installation guide of Go plugins for the protocol compiler: [https://grpc.io/docs/languages/go/quickstart/](https://grpc.io/docs/languages/go/quickstart/)
 
-5. Install the required dependencies:
+5. **Install the required dependencies**
 
    ```go
    go mod download
@@ -44,7 +46,13 @@ This project implements a gRPC server and client for performing simple math calc
 
 ## Usage
 
-1. \***\*Running the Server\*\***
+1. **Build Server and Client**
+
+   ```go
+   make build
+   ```
+
+2. **Running the Server**
 
    To start the gRPC server, run the following command:
 
@@ -54,7 +62,7 @@ This project implements a gRPC server and client for performing simple math calc
 
    The server will start listening on port **`50051`** by default.
 
-2. \***\*Running the Client\*\***
+3. **Running the Client**
 
    To use the gRPC client for performing math calculations, use the **`client`** executable with the following options:
 
@@ -64,24 +72,24 @@ This project implements a gRPC server and client for performing simple math calc
 
    - Addition:
      ```go
-     ./client -method add -a 5 -b 3
+     ./client.out -method add -a 5 -b 3
      ```
    - Subtraction:
      ```go
-     ./client -method subtract -a 10 -b 3
+     ./client.out -method subtract -a 10 -b 3
      ```
    - Multiplication:
      ```go
-     ./client -method multiply -a 4 -b 7
+     ./client.out -method multiply -a 4 -b 7
      ```
    - Division:
      ```go
-     ./client -method divide -a 15 -b 5
+     ./client.out -method divide -a 15 -b 5
      ```
 
    The result of the calculation will be displayed on the console.
 
-3. \***\*Unit Tests\*\***
+4. **Unit Tests**
 
    ```go
    make test
