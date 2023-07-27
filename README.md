@@ -68,6 +68,12 @@ This project utilizes Protocol Buffers (proto3) for defining the message formats
 
    Replace **`<operator>`** with the math operation to perform (**`add`**, **`subtract`**, **`multiply`**, or **`divide`**). Replace **`<number>`** with the operands for the respective operation.
 
+   for further knowledge use
+
+   ```
+      make client-help
+   ```
+
    ### Examples
 
    - Addition:

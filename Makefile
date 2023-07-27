@@ -23,6 +23,16 @@ run-client:
 	@echo "Running the client application..."
 	@./$(CLIENT_BINARY) -method add -a 1 -b 2
 
+# Display help for client system
+client-help:
+	@echo "Client Usage:"
+	@echo "  ./client.out -method <operator> -a <number> -b <number>"
+	@echo ""
+	@echo "  Options:"
+	@echo "    -method string   Method to execute (add, subtract, multiply, divide)"
+	@echo "    -a int           First operand"
+	@echo "    -b int           Second operand"
+
 # Run unit tests
 test:
 	@echo "Running unit tests..."
@@ -41,6 +51,10 @@ help:
 	@echo "  run-client  - Run the client application"
 	@echo "  test        - Run unit tests"
 	@echo "  clean       - Clean up build artifacts and temporary files"
+
+# Run linting using golangci-lint
+lint:
+	golangci-lint run ./...
 
 # By default, show the help message
 default: help
